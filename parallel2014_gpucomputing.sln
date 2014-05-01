@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30110.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "parallel2014_gpucomputing", "parallel2014_gpucomputing\parallel2014_gpucomputing.vcxproj", "{807A1499-89CE-47DE-A41F-6F79184EF377}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cuda", "cuda\cuda.vcxproj", "{A4BBCBC2-D8AD-45A2-8187-00887D993312}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "amp", "amp\amp.vcxproj", "{3F8D55AB-676C-4096-B988-B35DE8B06EB7}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "opencl", "opencl\opencl.vcxproj", "{57F08B1D-FEB0-4BCB-ACF3-98D69FC1761A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{807A1499-89CE-47DE-A41F-6F79184EF377}.Debug|Win32.ActiveCfg = Debug|Win32
+		{807A1499-89CE-47DE-A41F-6F79184EF377}.Debug|Win32.Build.0 = Debug|Win32
+		{807A1499-89CE-47DE-A41F-6F79184EF377}.Release|Win32.ActiveCfg = Release|Win32
+		{807A1499-89CE-47DE-A41F-6F79184EF377}.Release|Win32.Build.0 = Release|Win32
+		{A4BBCBC2-D8AD-45A2-8187-00887D993312}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A4BBCBC2-D8AD-45A2-8187-00887D993312}.Debug|Win32.Build.0 = Debug|Win32
+		{A4BBCBC2-D8AD-45A2-8187-00887D993312}.Release|Win32.ActiveCfg = Release|Win32
+		{A4BBCBC2-D8AD-45A2-8187-00887D993312}.Release|Win32.Build.0 = Release|Win32
+		{3F8D55AB-676C-4096-B988-B35DE8B06EB7}.Debug|Win32.ActiveCfg = Debug|Win32
+		{3F8D55AB-676C-4096-B988-B35DE8B06EB7}.Debug|Win32.Build.0 = Debug|Win32
+		{3F8D55AB-676C-4096-B988-B35DE8B06EB7}.Release|Win32.ActiveCfg = Release|Win32
+		{3F8D55AB-676C-4096-B988-B35DE8B06EB7}.Release|Win32.Build.0 = Release|Win32
+		{57F08B1D-FEB0-4BCB-ACF3-98D69FC1761A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{57F08B1D-FEB0-4BCB-ACF3-98D69FC1761A}.Debug|Win32.Build.0 = Debug|Win32
+		{57F08B1D-FEB0-4BCB-ACF3-98D69FC1761A}.Release|Win32.ActiveCfg = Release|Win32
+		{57F08B1D-FEB0-4BCB-ACF3-98D69FC1761A}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
