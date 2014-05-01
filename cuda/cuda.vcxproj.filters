@@ -5,13 +5,132 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
     <Filter Include="Resource Files">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Buffer">
+      <UniqueIdentifier>{8a89b053-21ce-4e1c-ab90-1bc2b1aeac8a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Cuda">
+      <UniqueIdentifier>{601aafdd-95db-416b-9cc7-a703255f0bec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Rekursiv">
+      <UniqueIdentifier>{906e0cc3-216f-481d-be2b-110000ba9a8e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Functor">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Utilities">
+      <UniqueIdentifier>{f8f6788a-49ff-47e3-9ee0-1245972e66de}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="HostBuffer.cpp">
+      <Filter>Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="DeviceBuffer.cpp">
+      <Filter>Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="PinnedBuffer.cpp">
+      <Filter>Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="CudaUtilities.cpp">
+      <Filter>Cuda</Filter>
+    </ClCompile>
+    <ClCompile Include="CudaExecConfig.cpp">
+      <Filter>Cuda</Filter>
+    </ClCompile>
+    <ClCompile Include="node.cpp">
+      <Filter>Rekursiv</Filter>
+    </ClCompile>
+    <ClCompile Include="while_find.cpp">
+      <Filter>Rekursiv</Filter>
+    </ClCompile>
+    <ClCompile Include="OSUtilities.cpp">
+      <Filter>Utilities</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PinnedBuffer.h">
+      <Filter>Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="HostBuffer.h">
+      <Filter>Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="DeviceBuffer.h">
+      <Filter>Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="CudaUtilities.h">
+      <Filter>Cuda</Filter>
+    </ClInclude>
+    <ClInclude Include="CudaExecConfig.h">
+      <Filter>Cuda</Filter>
+    </ClInclude>
+    <ClInclude Include="CudaException.h">
+      <Filter>Cuda</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseBuffer.h">
+      <Filter>Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="ThrustUtilities.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Extent.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Beispiele.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="node.h">
+      <Filter>Rekursiv</Filter>
+    </ClInclude>
+    <ClInclude Include="recursive_find.h">
+      <Filter>Rekursiv</Filter>
+    </ClInclude>
+    <ClInclude Include="while_find.h">
+      <Filter>Rekursiv</Filter>
+    </ClInclude>
+    <ClInclude Include="AddFunctor.h">
+      <Filter>Functor</Filter>
+    </ClInclude>
+    <ClInclude Include="IdFunctor.h">
+      <Filter>Functor</Filter>
+    </ClInclude>
+    <ClInclude Include="ITimer.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="WinTimer.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="CudaTimer.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="OSUtilities.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="thrust_map_beispiel.cu">
+      <Filter>Source Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <CudaCompile Include="recursive_kernel.cu">
+      <Filter>Rekursiv</Filter>
+    </CudaCompile>
+    <CudaCompile Include="recursive_find.cu">
+      <Filter>Rekursiv</Filter>
+    </CudaCompile>
+    <CudaCompile Include="while_find.cu">
+      <Filter>Rekursiv</Filter>
+    </CudaCompile>
   </ItemGroup>
 </Project>
