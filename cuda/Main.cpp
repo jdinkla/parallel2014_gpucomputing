@@ -13,6 +13,7 @@
 #include "recursive_kernel.h"
 #include "while_find.h"
 #include "TreeBenchmark.h"
+#include "MapBenchmark.h"
 
 using namespace std;
 
@@ -42,6 +43,8 @@ int main(int argc, char** argv)
 	fs.push_back(KeyFunctionPair("cuda_recursive_kernel", &cuda_recursive_kernel));
 	fs.push_back(KeyFunctionPair("cuda_while_example_7", &cuda_while_example_7));
 	fs.push_back(KeyFunctionPair("tree_compare_rec_while", &tree_compare_rec_while));
+	fs.push_back(KeyFunctionPair("map_copy", &bench_map_copy));
+	fs.push_back(KeyFunctionPair("map_copy_32", &bench_map_copy_32));
 
 	FunctionCaller fc(fs, &synopsis);
 

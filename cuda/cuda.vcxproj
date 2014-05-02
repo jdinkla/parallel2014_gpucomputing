@@ -164,6 +164,7 @@
     <ClCompile Include="DeviceBuffer.cpp" />
     <ClCompile Include="FunctionCaller.cpp" />
     <ClCompile Include="HostBuffer.cpp" />
+    <ClCompile Include="Instances.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Mandelbrot.cpp" />
     <ClCompile Include="MandelbrotBenchmark.cpp" />
@@ -194,6 +195,8 @@
     <ClInclude Include="Mandelbrot.h" />
     <ClInclude Include="MandelbrotBenchmark.h" />
     <ClInclude Include="MandelbrotCPU.h" />
+    <ClInclude Include="Map.h" />
+    <ClInclude Include="MapBenchmark.h" />
     <ClInclude Include="NestedExtent.h" />
     <ClInclude Include="node.h" />
     <ClInclude Include="OSUtilities.h" />
@@ -213,6 +216,8 @@
   <ItemGroup>
     <CudaCompile Include="cuda_mandelbrot.cu" />
     <CudaCompile Include="MandelbrotBenchmark.cu" />
+    <CudaCompile Include="Map.cu" />
+    <CudaCompile Include="MapBenchmark.cu" />
     <CudaCompile Include="multi_gpu.cu" />
     <CudaCompile Include="recursive_find.cu" />
     <CudaCompile Include="recursive_kernel.cu" />

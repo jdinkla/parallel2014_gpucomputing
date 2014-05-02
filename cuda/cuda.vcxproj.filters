@@ -74,6 +74,9 @@
     <ClCompile Include="FunctionCaller.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Instances.cpp">
+      <Filter>Map</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="PinnedBuffer.h">
@@ -181,6 +184,12 @@
     <ClInclude Include="recursive_kernel.h">
       <Filter>Rekursiv</Filter>
     </ClInclude>
+    <ClInclude Include="Map.h">
+      <Filter>Map</Filter>
+    </ClInclude>
+    <ClInclude Include="MapBenchmark.h">
+      <Filter>Map</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CudaCompile Include="recursive_kernel.cu">
@@ -206,6 +215,12 @@
     </CudaCompile>
     <CudaCompile Include="TreeBenchmark.cu">
       <Filter>Rekursiv</Filter>
+    </CudaCompile>
+    <CudaCompile Include="Map.cu">
+      <Filter>Map</Filter>
+    </CudaCompile>
+    <CudaCompile Include="MapBenchmark.cu">
+      <Filter>Map</Filter>
     </CudaCompile>
   </ItemGroup>
 </Project>
