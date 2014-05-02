@@ -5,10 +5,6 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
     <Filter Include="Buffer">
       <UniqueIdentifier>{8a89b053-21ce-4e1c-ab90-1bc2b1aeac8a}</UniqueIdentifier>
     </Filter>
@@ -18,12 +14,21 @@
     <Filter Include="Rekursiv">
       <UniqueIdentifier>{906e0cc3-216f-481d-be2b-110000ba9a8e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Functor">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
     <Filter Include="Utilities">
       <UniqueIdentifier>{f8f6788a-49ff-47e3-9ee0-1245972e66de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Thrust">
+      <UniqueIdentifier>{0cc418f5-7b4a-47ff-82ee-5682cc53ee50}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MultiGPU">
+      <UniqueIdentifier>{6c7149b3-459e-4e1a-84c4-1310730b5f7c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mandelbrot">
+      <UniqueIdentifier>{dd728105-14f9-4fc6-a9a1-b2650fd726d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Map">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -54,6 +59,21 @@
     <ClCompile Include="OSUtilities.cpp">
       <Filter>Utilities</Filter>
     </ClCompile>
+    <ClCompile Include="Mandelbrot.cpp">
+      <Filter>Mandelbrot</Filter>
+    </ClCompile>
+    <ClCompile Include="MandelbrotBenchmark.cpp">
+      <Filter>Mandelbrot</Filter>
+    </ClCompile>
+    <ClCompile Include="MandelbrotCPU.cpp">
+      <Filter>Mandelbrot</Filter>
+    </ClCompile>
+    <ClCompile Include="BenchmarkUtilities.cpp">
+      <Filter>Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="FunctionCaller.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="PinnedBuffer.h">
@@ -77,9 +97,6 @@
     <ClInclude Include="BaseBuffer.h">
       <Filter>Buffer</Filter>
     </ClInclude>
-    <ClInclude Include="ThrustUtilities.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="Extent.h">
       <Filter>Source Files</Filter>
     </ClInclude>
@@ -96,10 +113,10 @@
       <Filter>Rekursiv</Filter>
     </ClInclude>
     <ClInclude Include="AddFunctor.h">
-      <Filter>Functor</Filter>
+      <Filter>Map</Filter>
     </ClInclude>
     <ClInclude Include="IdFunctor.h">
-      <Filter>Functor</Filter>
+      <Filter>Map</Filter>
     </ClInclude>
     <ClInclude Include="ITimer.h">
       <Filter>Utilities</Filter>
@@ -116,11 +133,54 @@
     <ClInclude Include="OSUtilities.h">
       <Filter>Utilities</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="thrust_map_beispiel.cu">
+    <ClInclude Include="ThrustUtilities.h">
+      <Filter>Thrust</Filter>
+    </ClInclude>
+    <ClInclude Include="NestedExtent.h">
       <Filter>Source Files</Filter>
-    </None>
+    </ClInclude>
+    <ClInclude Include="Partition.h">
+      <Filter>MultiGPU</Filter>
+    </ClInclude>
+    <ClInclude Include="Partitions.h">
+      <Filter>MultiGPU</Filter>
+    </ClInclude>
+    <ClInclude Include="Mandelbrot.h">
+      <Filter>Mandelbrot</Filter>
+    </ClInclude>
+    <ClInclude Include="Rectangle.h">
+      <Filter>Mandelbrot</Filter>
+    </ClInclude>
+    <ClInclude Include="thrust_map_beispiel.h">
+      <Filter>Thrust</Filter>
+    </ClInclude>
+    <ClInclude Include="MandelbrotBenchmark.h">
+      <Filter>Mandelbrot</Filter>
+    </ClInclude>
+    <ClInclude Include="MandelbrotCPU.h">
+      <Filter>Mandelbrot</Filter>
+    </ClInclude>
+    <ClInclude Include="BenchmarkUtilities.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="C11Timer.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Defs.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Function.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FunctionCaller.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TreeBenchmark.h">
+      <Filter>Rekursiv</Filter>
+    </ClInclude>
+    <ClInclude Include="recursive_kernel.h">
+      <Filter>Rekursiv</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CudaCompile Include="recursive_kernel.cu">
@@ -130,6 +190,21 @@
       <Filter>Rekursiv</Filter>
     </CudaCompile>
     <CudaCompile Include="while_find.cu">
+      <Filter>Rekursiv</Filter>
+    </CudaCompile>
+    <CudaCompile Include="thrust_map_beispiel.cu">
+      <Filter>Thrust</Filter>
+    </CudaCompile>
+    <CudaCompile Include="multi_gpu.cu">
+      <Filter>MultiGPU</Filter>
+    </CudaCompile>
+    <CudaCompile Include="cuda_mandelbrot.cu">
+      <Filter>Mandelbrot</Filter>
+    </CudaCompile>
+    <CudaCompile Include="MandelbrotBenchmark.cu">
+      <Filter>Mandelbrot</Filter>
+    </CudaCompile>
+    <CudaCompile Include="TreeBenchmark.cu">
       <Filter>Rekursiv</Filter>
     </CudaCompile>
   </ItemGroup>

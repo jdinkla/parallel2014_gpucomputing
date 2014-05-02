@@ -6,9 +6,7 @@
 
 #pragma once
 
-#include <chrono>
-#include <string>
-#include <functional>
+#include "Defs.h"
 #include "ITimer.h"
 
 class Timer
@@ -22,28 +20,18 @@ public:
 
 	void start()
 	{
-		start_val = std::chrono::system_clock::now();
 	}
 
 	void stop()
 	{
-		stop_val = std::chrono::system_clock::now();
 	}
 
 	float delta()
 	{
-		return (float)getDuration().count();
-	}
-
-	std::chrono::milliseconds getDuration()
-	{
-		return std::chrono::duration_cast<std::chrono::milliseconds>(stop_val - start_val);
+		return (float) 0.0f;
 	}
 
 private:
-
-	std::chrono::system_clock::time_point start_val;
-	std::chrono::system_clock::time_point stop_val;
 
 };
 

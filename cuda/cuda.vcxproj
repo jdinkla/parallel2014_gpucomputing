@@ -158,11 +158,16 @@
     </CudaCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BenchmarkUtilities.cpp" />
     <ClCompile Include="CudaExecConfig.cpp" />
     <ClCompile Include="CudaUtilities.cpp" />
     <ClCompile Include="DeviceBuffer.cpp" />
+    <ClCompile Include="FunctionCaller.cpp" />
     <ClCompile Include="HostBuffer.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Mandelbrot.cpp" />
+    <ClCompile Include="MandelbrotBenchmark.cpp" />
+    <ClCompile Include="MandelbrotCPU.cpp" />
     <ClCompile Include="node.cpp" />
     <ClCompile Include="OSUtilities.cpp" />
     <ClCompile Include="PinnedBuffer.cpp" />
@@ -172,28 +177,47 @@
     <ClInclude Include="AddFunctor.h" />
     <ClInclude Include="BaseBuffer.h" />
     <ClInclude Include="Beispiele.h" />
+    <ClInclude Include="BenchmarkUtilities.h" />
+    <ClInclude Include="C11Timer.h" />
     <ClInclude Include="CudaException.h" />
     <ClInclude Include="CudaExecConfig.h" />
     <ClInclude Include="CudaTimer.h" />
     <ClInclude Include="CudaUtilities.h" />
+    <ClInclude Include="Defs.h" />
     <ClInclude Include="DeviceBuffer.h" />
     <ClInclude Include="Extent.h" />
+    <ClInclude Include="Function.h" />
+    <ClInclude Include="FunctionCaller.h" />
     <ClInclude Include="HostBuffer.h" />
     <ClInclude Include="IdFunctor.h" />
     <ClInclude Include="ITimer.h" />
+    <ClInclude Include="Mandelbrot.h" />
+    <ClInclude Include="MandelbrotBenchmark.h" />
+    <ClInclude Include="MandelbrotCPU.h" />
+    <ClInclude Include="NestedExtent.h" />
     <ClInclude Include="node.h" />
     <ClInclude Include="OSUtilities.h" />
+    <ClInclude Include="Partition.h" />
+    <ClInclude Include="Partitions.h" />
     <ClInclude Include="PinnedBuffer.h" />
+    <ClInclude Include="Rectangle.h" />
     <ClInclude Include="recursive_find.h" />
+    <ClInclude Include="recursive_kernel.h" />
     <ClInclude Include="ThrustUtilities.h" />
+    <ClInclude Include="thrust_map_beispiel.h" />
     <ClInclude Include="Timer.h" />
+    <ClInclude Include="TreeBenchmark.h" />
     <ClInclude Include="while_find.h" />
     <ClInclude Include="WinTimer.h" />
   </ItemGroup>
   <ItemGroup>
+    <CudaCompile Include="cuda_mandelbrot.cu" />
+    <CudaCompile Include="MandelbrotBenchmark.cu" />
+    <CudaCompile Include="multi_gpu.cu" />
     <CudaCompile Include="recursive_find.cu" />
     <CudaCompile Include="recursive_kernel.cu" />
     <CudaCompile Include="thrust_map_beispiel.cu" />
+    <CudaCompile Include="TreeBenchmark.cu" />
     <CudaCompile Include="while_find.cu" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

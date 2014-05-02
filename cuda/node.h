@@ -41,3 +41,6 @@ struct node
 	}
 
 };
+
+// CLR90, S. 251
+void insert(node** root, node* z);

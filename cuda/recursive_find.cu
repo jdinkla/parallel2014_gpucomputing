@@ -7,7 +7,7 @@
 #include "recursive_find.h"
 
 __global__
-void rec_find(
+void rec_find_kernel(
 	const node* n, const int numElems,
 	const int* elems, bool* found)
 {
@@ -18,3 +18,19 @@ void rec_find(
 		found[x] = find(n, elem);
 	}
 }
+
+void  rec_find(
+	CudaExecConfig cnf,
+	const node* n,
+	thrust::device_vector<int>& elems,
+	thrust::device_vector<bool>& found
+	)
+{
+	const size_t numElems = elems.size();
+	dim3 g = cnf.get_grid();
+	dim3 b = cnf.get_block();
+	const int* ePtr = thrust::raw_pointer_cast(&elems[0]);;
+	bool* fPr = thrust::raw_pointer_cast(&found[0]);
+	rec_find_kernel<<<g, b>>>(n, numElems, ePtr, fPr);
+}
+

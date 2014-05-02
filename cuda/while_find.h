@@ -23,3 +23,5 @@ void while_find_host(
 	thrust::host_vector<int>& elems,
 	thrust::host_vector<bool>& found,
 	const int x);
+
+void cuda_while_example_7();

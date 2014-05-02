@@ -6,8 +6,6 @@
 
 #pragma once
 
-#pragma once
-
 #include <cuda_runtime_api.h>
 #include "ITimer.h"
 
