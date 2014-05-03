@@ -13,6 +13,7 @@ HostBuffer<T>::HostBuffer(const Extent& e)
 {
 	const size_t sz = extent.get_number_of_elems() * sizeof(T);
 	ptr = (T*)malloc(sz);
+	version = 0;
 }
 
 template <typename T>
@@ -22,6 +23,7 @@ HostBuffer<T>::~HostBuffer()
 	{
 		free(ptr);
 		ptr = 0;
+		version = -1;
 	}
 }
 

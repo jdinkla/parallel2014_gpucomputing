@@ -16,6 +16,7 @@ DeviceBuffer<T>::DeviceBuffer(const Extent& e)
 	size_t sz = BaseBuffer<T>::extent.get_number_of_elems() * sizeof(T);
 	cudaMalloc((void**)&ptr, sz);
 	check_cuda();
+	version = 0;
 }
 
 template <typename T>
@@ -25,6 +26,7 @@ DeviceBuffer<T>::~DeviceBuffer()
 	{
 		cudaFree(BaseBuffer<T>::ptr);
 		check_cuda();
+		version = -1;
 	}
 }
 
@@ -37,6 +39,7 @@ void DeviceBuffer<T>::copy_from(const PinnedBuffer<T>& buf)
 	void* src = buf.get_ptr();
 	cudaMemcpy(dst, src, sz, cudaMemcpyHostToDevice);
 	check_cuda();
+	set_version(buf);
 }
 
 template <typename T>
@@ -48,6 +51,7 @@ void DeviceBuffer<T>::copy_to(PinnedBuffer<T>& buf) const
 	void* src = BaseBuffer<T>::get_ptr();
 	cudaMemcpy(dst, src, sz, cudaMemcpyDeviceToHost);
 	check_cuda();
+	buf.set_version(*this);
 }
 
 // Instances

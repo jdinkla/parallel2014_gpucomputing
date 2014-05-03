@@ -159,6 +159,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BenchmarkUtilities.cpp" />
+    <ClCompile Include="BufferPair.cpp" />
     <ClCompile Include="CudaExecConfig.cpp" />
     <ClCompile Include="CudaUtilities.cpp" />
     <ClCompile Include="DeviceBuffer.cpp" />
@@ -179,6 +180,7 @@
     <ClInclude Include="BaseBuffer.h" />
     <ClInclude Include="Beispiele.h" />
     <ClInclude Include="BenchmarkUtilities.h" />
+    <ClInclude Include="BufferPair.h" />
     <ClInclude Include="C11Timer.h" />
     <ClInclude Include="CudaException.h" />
     <ClInclude Include="CudaExecConfig.h" />

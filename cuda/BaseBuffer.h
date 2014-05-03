@@ -18,6 +18,7 @@ public:
 	BaseBuffer(const Extent& e)
 		: ptr(0)
 		, extent(e)
+		, version(-1)
 	{
 	}
 
@@ -55,11 +56,28 @@ public:
     {
         return ptr + extent.get_number_of_elems();
     }
-    
+
+	void incr_version()
+	{
+		++version;
+	}
+
+	int get_version() const
+	{
+		return version;
+	}
+
+	void set_version(const BaseBuffer<T> buf)
+	{
+		version = buf.get_version();
+	}
+
 protected:
 
 	Extent extent;
 
 	T* ptr;
+
+	int version;
 
 };

@@ -77,6 +77,9 @@
     <ClCompile Include="Instances.cpp">
       <Filter>Map</Filter>
     </ClCompile>
+    <ClCompile Include="BufferPair.cpp">
+      <Filter>Buffer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="PinnedBuffer.h">
@@ -189,6 +192,9 @@
     </ClInclude>
     <ClInclude Include="MapBenchmark.h">
       <Filter>Map</Filter>
+    </ClInclude>
+    <ClInclude Include="BufferPair.h">
+      <Filter>Buffer</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

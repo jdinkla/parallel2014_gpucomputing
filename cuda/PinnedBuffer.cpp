@@ -15,6 +15,7 @@ PinnedBuffer<T>::PinnedBuffer(const Extent& e)
 	const size_t sz = extent.get_number_of_elems() * sizeof(T);
 	cudaMallocHost((void**)&ptr, sz);
 	check_cuda();
+	version = 0;
 }
 
 template <typename T>
@@ -25,6 +26,7 @@ PinnedBuffer<T>::~PinnedBuffer()
 		cudaFreeHost(ptr);
 		ptr = 0;
 		check_cuda();
+		version = -1;
 	}
 }
 
