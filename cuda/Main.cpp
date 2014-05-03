@@ -6,6 +6,7 @@
 
 #define _CRT_SECURE_NO_WARNINGS 1
 
+#include <cuda_profiler_api.h>
 #include <iostream>
 #include "thrust_map_beispiel.h"
 #include "FunctionCaller.h"
@@ -45,17 +46,28 @@ int main(int argc, char** argv)
 	fs.push_back(KeyFunctionPair("tree_compare_rec_while", &tree_compare_rec_while));
 	fs.push_back(KeyFunctionPair("map_copy", &bench_map_copy));
 	fs.push_back(KeyFunctionPair("map_copy_32", &bench_map_copy_32));
+	fs.push_back(KeyFunctionPair("map_copy_32_short", &bench_map_copy_32_short));
+	fs.push_back(KeyFunctionPair("map_copy_int2", &bench_map_copy_int2));
+	fs.push_back(KeyFunctionPair("map_copy_int2_32", &bench_map_copy_int2_32));
+	fs.push_back(KeyFunctionPair("map_copy_int2_32_short", &bench_map_copy_int2_32_short));
+	fs.push_back(KeyFunctionPair("map_copy_int4", &bench_map_copy_int4));
+	fs.push_back(KeyFunctionPair("map_copy_int4_32", &bench_map_copy_int4_32));
+	fs.push_back(KeyFunctionPair("map_copy_int4_32_short", &bench_map_copy_int4_32_short));
 
 	FunctionCaller fc(fs, &synopsis);
 
+	int rc = 0;
 	try
 	{
-		int rc = fc.exec(argc, argv);
-		return rc;
+		rc = fc.exec(argc, argv);
 	}
 	catch (std::exception& e)
 	{
 		cerr << "ERROR: " << e.what() << endl;
 	}
-	return 0;
+
+	// needed for profiler
+	cudaDeviceReset();
+
+	return rc;
 }

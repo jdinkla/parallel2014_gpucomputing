@@ -33,3 +33,12 @@ void map_2d(CudaExecConfig& cnf, const F& op, Extent& ext,
 template
 void map(CudaExecConfig& cnf, const IdFunctor<int>& op, Extent& ext,
 thrust::device_vector<int>& src, thrust::device_vector<int>& dest);
+
+template
+void map(CudaExecConfig& cnf, const IdFunctor<int2>& op, Extent& ext,
+thrust::device_vector<int2>& src, thrust::device_vector<int2>& dest);
+
+template
+void map(CudaExecConfig& cnf, const IdFunctor<int4>& op, Extent& ext,
+thrust::device_vector<int4>& src, thrust::device_vector<int4>& dest);
+
