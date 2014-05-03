@@ -9,8 +9,6 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cuda", "cuda\cuda.vcxproj",
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "amp", "amp\amp.vcxproj", "{3F8D55AB-676C-4096-B988-B35DE8B06EB7}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "opencl", "opencl\opencl.vcxproj", "{57F08B1D-FEB0-4BCB-ACF3-98D69FC1761A}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -43,14 +41,6 @@ Global
 		{3F8D55AB-676C-4096-B988-B35DE8B06EB7}.Release|Win32.Build.0 = Release|Win32
 		{3F8D55AB-676C-4096-B988-B35DE8B06EB7}.Release|x64.ActiveCfg = Release|x64
 		{3F8D55AB-676C-4096-B988-B35DE8B06EB7}.Release|x64.Build.0 = Release|x64
-		{57F08B1D-FEB0-4BCB-ACF3-98D69FC1761A}.Debug|Win32.ActiveCfg = Debug|Win32
-		{57F08B1D-FEB0-4BCB-ACF3-98D69FC1761A}.Debug|Win32.Build.0 = Debug|Win32
-		{57F08B1D-FEB0-4BCB-ACF3-98D69FC1761A}.Debug|x64.ActiveCfg = Debug|x64
-		{57F08B1D-FEB0-4BCB-ACF3-98D69FC1761A}.Debug|x64.Build.0 = Debug|x64
-		{57F08B1D-FEB0-4BCB-ACF3-98D69FC1761A}.Release|Win32.ActiveCfg = Release|Win32
-		{57F08B1D-FEB0-4BCB-ACF3-98D69FC1761A}.Release|Win32.Build.0 = Release|Win32
-		{57F08B1D-FEB0-4BCB-ACF3-98D69FC1761A}.Release|x64.ActiveCfg = Release|x64
-		{57F08B1D-FEB0-4BCB-ACF3-98D69FC1761A}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

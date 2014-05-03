@@ -15,6 +15,7 @@
 #include "while_find.h"
 #include "TreeBenchmark.h"
 #include "MapBenchmark.h"
+#include "Mandelbrot.h"
 
 using namespace std;
 
@@ -36,6 +37,7 @@ void synopsis()
 int main(int argc, char** argv)
 {
 	fs.push_back(KeyFunctionPair("thrust_map", &thrust_map_beispiel));
+	fs.push_back(KeyFunctionPair("cuda_mandelbrot", &cuda_mandelbrot));
 	fs.push_back(KeyFunctionPair("mandelbrot", &bench_mandelbrot));
 	fs.push_back(KeyFunctionPair("mandelbrot_short", &bench_mandelbrot_short));
 	fs.push_back(KeyFunctionPair("mandelbrot_shorter", &bench_mandelbrot_shorter));
@@ -54,6 +56,8 @@ int main(int argc, char** argv)
 	fs.push_back(KeyFunctionPair("map_copy_int4_32", &bench_map_copy_int4_32));
 	fs.push_back(KeyFunctionPair("map_copy_int4_32_short", &bench_map_copy_int4_32_short));
 
+
+	
 	FunctionCaller fc(fs, &synopsis);
 
 	int rc = 0;

@@ -41,18 +41,22 @@ void cuda_mandelbrot(
 
 void cuda_mandelbrot()
 {
-	const int max_iter = 10000;
+	CudaTimer timer;
+	const int max_iter = 1000;
 	Rectangle r(-2.5, 1.0, -1.0, 1.0);
-	const int s = 1024 * 14;
+	const int s = 1024 * 10;
 	Extent ext(s, s);
 	CudaExecConfig cnf(ext, dim3(128, 1, 1));
 	dim3 g = cnf.get_grid();
 	dim3 b = cnf.get_block();
 	thrust::device_vector<int> d(ext.get_number_of_elems());
 	cudaDeviceSynchronize();
+	timer.start();
 	mandelbrot_kernel << <g, b >> >(ext, raw_pointer_cast(&d[0]), max_iter, r);
 	cudaDeviceSynchronize();
+	timer.stop();
 	check_cuda();
+	cout << "Mandelbrot: " << timer.delta() << endl;
 }
 
 
