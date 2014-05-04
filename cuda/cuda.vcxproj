@@ -173,7 +173,7 @@
     <ClCompile Include="node.cpp" />
     <ClCompile Include="OSUtilities.cpp" />
     <ClCompile Include="PinnedBuffer.cpp" />
-    <ClCompile Include="while_find.cpp" />
+    <ClCompile Include="while_find_host.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AddFunctor.h" />

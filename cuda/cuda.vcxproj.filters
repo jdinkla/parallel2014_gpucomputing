@@ -53,9 +53,6 @@
     <ClCompile Include="node.cpp">
       <Filter>Rekursiv</Filter>
     </ClCompile>
-    <ClCompile Include="while_find.cpp">
-      <Filter>Rekursiv</Filter>
-    </ClCompile>
     <ClCompile Include="OSUtilities.cpp">
       <Filter>Utilities</Filter>
     </ClCompile>
@@ -79,6 +76,9 @@
     </ClCompile>
     <ClCompile Include="BufferPair.cpp">
       <Filter>Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="while_find_host.cpp">
+      <Filter>Rekursiv</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
