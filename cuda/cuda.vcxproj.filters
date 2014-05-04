@@ -59,9 +59,6 @@
     <ClCompile Include="Mandelbrot.cpp">
       <Filter>Mandelbrot</Filter>
     </ClCompile>
-    <ClCompile Include="MandelbrotBenchmark.cpp">
-      <Filter>Mandelbrot</Filter>
-    </ClCompile>
     <ClCompile Include="MandelbrotCPU.cpp">
       <Filter>Mandelbrot</Filter>
     </ClCompile>
@@ -79,6 +76,9 @@
     </ClCompile>
     <ClCompile Include="while_find_host.cpp">
       <Filter>Rekursiv</Filter>
+    </ClCompile>
+    <ClCompile Include="MandelbrotBenchmarkHost.cpp">
+      <Filter>Mandelbrot</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
