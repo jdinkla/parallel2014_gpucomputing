@@ -16,6 +16,7 @@
 #include "TreeBenchmark.h"
 #include "MapBenchmark.h"
 #include "Mandelbrot.h"
+#include "Mandelbrot2.h"
 
 using namespace std;
 
@@ -38,6 +39,7 @@ int main(int argc, char** argv)
 {
 	fs.push_back(KeyFunctionPair("thrust_map", &thrust_map_beispiel));
 	fs.push_back(KeyFunctionPair("cuda_mandelbrot", &cuda_mandelbrot));
+	fs.push_back(KeyFunctionPair("cuda_mandelbrot2", &cuda_mandelbrot2));
 	fs.push_back(KeyFunctionPair("mandelbrot", &bench_mandelbrot));
 	fs.push_back(KeyFunctionPair("mandelbrot_short", &bench_mandelbrot_short));
 	fs.push_back(KeyFunctionPair("mandelbrot_shorter", &bench_mandelbrot_shorter));

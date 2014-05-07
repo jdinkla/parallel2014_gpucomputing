@@ -6,7 +6,11 @@
 
 #define _CRT_SECURE_NO_WARNINGS 1
 
+#include "Defs.h"
+#ifndef MAC
 #include <omp.h>
+#endif
+
 #include "MandelbrotCPU.h"
 #include "Extent.h"
 #include "Rectangle.h"

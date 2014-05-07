@@ -4,7 +4,10 @@
 * See the LICENSE file in the root directory.
 */
 
+#include "Defs.h"
+#ifndef MAC
 #include <omp.h>
+#endif
 #include <cuda_runtime_api.h>
 #include "CudaUtilities.h"
 #include <vector>
@@ -44,8 +47,10 @@ void cuda_multi_gpu()
 	// Partitions
 	Partitions parts(numJobs, numParts);
 	// Konfiguriere OpenMP
+#ifndef MAC
 	const int old_threads = omp_get_num_threads();
 	omp_set_num_threads(numParts);
+#endif
 #pragma omp parallel for
 	for (int i = 0; i < numParts; i++)
 	{
@@ -63,5 +68,7 @@ void cuda_multi_gpu()
 		// Und join
 		cudaStreamSynchronize(p->stream);														check_cuda();
 	}
+#ifndef MAC	
 	omp_set_num_threads(old_threads);
+#endif	
 }

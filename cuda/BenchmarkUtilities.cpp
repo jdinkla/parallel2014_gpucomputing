@@ -5,6 +5,11 @@
 */
 
 #include "BenchmarkUtilities.h"
+#include <iostream>
+#include "CudaUtilities.h"
+#include <cmath>
+
+using namespace std;
 
 pairs2d get_blocks()
 {
@@ -50,4 +55,16 @@ pairs2d get_special_blocks()
 	result.push_back(pair2d(1024, 1));
 	result.push_back(pair2d(64, 1));
 	return result;
+}
+
+size_t get_size_2d() 
+{
+	const size_t free = get_free_device_mem();
+	cout << "free memory " << free << endl;
+	const size_t free2 = free / 2; // Sicherheit
+	const size_t free3 = free2 / 2; // zwei buffer
+	const size_t free4 = free3 / 4; // int braucht 4 bytes
+	const size_t squared = sqrt(free4);
+	cout << "Using sizeX=sizeY=" << squared << endl;
+	return squared;
 }

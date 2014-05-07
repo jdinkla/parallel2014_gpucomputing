@@ -15,12 +15,21 @@
 #include "Map.h"
 #include <iostream>
 #include "IdFunctor.h"
+#include "BenchmarkUtilities.h"
 
 using namespace std;
 
+
 // Diese Größen ändern, wenn der Speicherplatz nicht ausreicht.
-const int sizeX = 14 * 1024;
-const int sizeY = 14 * 1024;
+static int sizeX = 10 * 1024;
+static int sizeY = 10 * 1024;
+
+void init() 
+{
+	// const size_t squared = get_size_2d();
+	// sizeX = squared;
+	// sizeY = squared;
+}
 
 template <typename T>
 void bench_map_copy_timed(
@@ -51,6 +60,7 @@ void bench_map_copy_timed(
 template <typename T>
 void bench_map(Extent& ext, thrust::device_vector<T>& d1, thrust::device_vector<T>& d2)
 {
+	init();
 	CudaTimer timer;
 	cudaDeviceSynchronize();
 	check_cuda();
@@ -63,6 +73,7 @@ void bench_map(Extent& ext, thrust::device_vector<T>& d1, thrust::device_vector<
 template <typename T>
 void bench_map_32(Extent& ext, thrust::device_vector<T>& d1, thrust::device_vector<T>& d2)
 {
+	init();
 	CudaTimer timer;
 	cudaDeviceSynchronize();
 	check_cuda();
@@ -75,6 +86,7 @@ void bench_map_32(Extent& ext, thrust::device_vector<T>& d1, thrust::device_vect
 template <typename T>
 void bench_map_32_short(Extent& ext, thrust::device_vector<T>& d1, thrust::device_vector<T>& d2)
 {
+	init();
 	CudaTimer timer;
 	cudaDeviceSynchronize();
 	check_cuda();
@@ -86,6 +98,7 @@ void bench_map_32_short(Extent& ext, thrust::device_vector<T>& d1, thrust::devic
 
 void bench_map_copy()
 {
+	init();
 	CudaTimer timer;
 	Extent ext(sizeX* sizeY);
 	thrust::device_vector<int> d1(ext.get_number_of_elems());
@@ -98,6 +111,7 @@ void bench_map_copy()
 
 void bench_map_copy_32()
 {
+	init();
 	CudaTimer timer;
 	Extent ext(sizeX* sizeY);
 	thrust::device_vector<int> d1(ext.get_number_of_elems());
@@ -110,6 +124,7 @@ void bench_map_copy_32()
 
 void bench_map_copy_32_short()
 {
+	init();
 	CudaTimer timer;
 	Extent ext(sizeX* sizeY);
 	thrust::device_vector<int> d1(ext.get_number_of_elems());
@@ -122,6 +137,7 @@ void bench_map_copy_32_short()
 
 void bench_map_copy_int2()
 {
+	init();
 	CudaTimer timer;
 	Extent ext(sizeX / 2 * sizeY);
 	thrust::device_vector<int2> d1(ext.get_number_of_elems());
@@ -133,6 +149,7 @@ void bench_map_copy_int2()
 
 void bench_map_copy_int2_32()
 {
+	init();
 	CudaTimer timer;
 	Extent ext(sizeX / 2 * sizeY);
 	thrust::device_vector<int2> d1(ext.get_number_of_elems());
@@ -144,6 +161,7 @@ void bench_map_copy_int2_32()
 
 void bench_map_copy_int2_32_short()
 {
+	init();
 	CudaTimer timer;
 	Extent ext(sizeX / 2 * sizeY);
 	thrust::device_vector<int2> d1(ext.get_number_of_elems());
@@ -155,6 +173,7 @@ void bench_map_copy_int2_32_short()
 
 void bench_map_copy_int4()
 {
+	init();
 	CudaTimer timer;
 	Extent ext(sizeX / 4 * sizeY);
 	thrust::device_vector<int4> d1(ext.get_number_of_elems());
@@ -166,6 +185,7 @@ void bench_map_copy_int4()
 
 void bench_map_copy_int4_32()
 {
+	init();
 	CudaTimer timer;
 	Extent ext(sizeX / 4 * sizeY);
 	thrust::device_vector<int4> d1(ext.get_number_of_elems());
@@ -177,6 +197,7 @@ void bench_map_copy_int4_32()
 
 void bench_map_copy_int4_32_short()
 {
+	init();
 	CudaTimer timer;
 	Extent ext(sizeX / 4 * sizeY);
 	thrust::device_vector<int4> d1(ext.get_number_of_elems());

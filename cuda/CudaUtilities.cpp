@@ -14,3 +14,19 @@ void check_cuda()
 		throw CudaException(txt);
 	}
 }
+
+size_t get_free_device_mem()
+{
+	size_t free, total;
+	cudaError_t rc = cudaMemGetInfo	(&free, &total);
+	check_cuda();
+	return free;
+}
+
+size_t get_total_device_mem()
+{
+	size_t free, total;
+	cudaError_t rc = cudaMemGetInfo	(&free, &total);
+	check_cuda();
+	return total;
+}

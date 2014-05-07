@@ -4,8 +4,13 @@
 * See the LICENSE file in the root directory.
 */
 
+#include "Defs.h"
 #include "TreeBenchmark.h"
+#ifndef MAC
 #include <random>
+#else
+#include <stdlib.h>
+#endif
 #include "node.h"
 #include <thrust/host_vector.h>
 #include <thrust/device_vector.h>
@@ -22,22 +27,33 @@ void tree_compare_rec_while()
 	const int low = 0;
 	const int high = 2 * treeSize;
 
-	// Erstelle Baum
+	// Erstelle Baum und Sucharray
+	node* root = 0;
+	thrust::host_vector<int> h(searchSize);
+
+#ifndef MAC
 	std::random_device rd;
 	std::mt19937 gen(rd());
 	std::uniform_int_distribution<> dist(low, high);
-	node* root = 0;
 	for (int i = 0; i < treeSize; i++)
 	{
 		insert(&root, new node(dist(gen)));
 	}
-
-	// Erstelle Such-Array
-	thrust::host_vector<int> h(searchSize);
 	for (thrust::host_vector<int>::iterator it = h.begin(); it != h.end(); it++)
 	{
 		*it = dist(gen);
 	}
+#else
+	for (int i = 0; i < treeSize; i++)
+	{
+		insert(&root, new node(rand() % (high -low) + low));
+	}
+	for (thrust::host_vector<int>::iterator it = h.begin(); it != h.end(); it++)
+	{
+		*it = rand() % (high -low) + low;
+	}
+#endif
+
 	thrust::host_vector<bool> foundh(searchSize, false);
 
 	thrust::device_vector<int> d(searchSize);
