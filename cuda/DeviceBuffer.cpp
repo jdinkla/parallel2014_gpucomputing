@@ -14,17 +14,14 @@ template <typename T>
 DeviceBuffer<T>::DeviceBuffer(const Extent& e)
 : BaseBuffer<T>(e)
 {
+	size_t sz = BaseBuffer<T>::extent.get_number_of_elems() * sizeof(T);
 #ifdef MAC
-	size_t sz = BaseBuffer<T>::extent.get_number_of_elems() * sizeof(T);
 	cudaMalloc((void**)&BaseBuffer<T>::ptr, sz);
-	check_cuda();
-	BaseBuffer<T>::version = 0;
 #else
-	size_t sz = BaseBuffer<T>::extent.get_number_of_elems() * sizeof(T);
 	cudaMalloc((void**)&ptr, sz);
-	check_cuda();
-	version = 0;
 #endif	
+	BaseBuffer<T>::version = 0;
+	check_cuda();
 }
 
 template <typename T>
@@ -34,11 +31,7 @@ DeviceBuffer<T>::~DeviceBuffer()
 	{
 		cudaFree(BaseBuffer<T>::ptr);
 		check_cuda();
-#ifdef MAC
 		BaseBuffer<T>::version = -1;
-#else
-		version = -1;
-#endif		
 	}
 }
 

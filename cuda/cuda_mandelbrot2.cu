@@ -5,6 +5,7 @@
 */
 
 #include "Rectangle.h"
+#include "Mandelbrot.h"
 #include "Mandelbrot2.h"
 #include "Extent.h"
 #include "CudaUtilities.h"
@@ -45,7 +46,7 @@ void cuda_mandelbrot2()
 	Rectangle r(-2.5, 1.0, -1.0, 1.0);
 	const int s = 1024 * 10;
 	Extent ext(s, s);
-	CudaExecConfig cnf(ext, dim3(128, 1, 1));
+	CudaExecConfig cnf(ext, dim3(32, 4, 1));
 	dim3 g = cnf.get_grid();
 	dim3 b = cnf.get_block();
 	thrust::device_vector<int> d(ext.get_number_of_elems());

@@ -196,6 +196,9 @@
     <ClInclude Include="BufferPair.h">
       <Filter>Buffer</Filter>
     </ClInclude>
+    <ClInclude Include="Mandelbrot2.h">
+      <Filter>Mandelbrot</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CudaCompile Include="recursive_kernel.cu">
@@ -227,6 +230,9 @@
     </CudaCompile>
     <CudaCompile Include="MapBenchmark.cu">
       <Filter>Map</Filter>
+    </CudaCompile>
+    <CudaCompile Include="cuda_mandelbrot2.cu">
+      <Filter>Mandelbrot</Filter>
     </CudaCompile>
   </ItemGroup>
 </Project>

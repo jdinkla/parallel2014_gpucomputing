@@ -30,7 +30,7 @@ float2 iterate(const float2 f)
 }
 
 __device__ __host__ inline
-int mandelbrot2(float2 xy0, const int max_iter)
+int mandelbrot2(const float2 xy0, const int max_iter)
 {
 	int iter = 0;
 	float2 xy = make_float2(0.0f, 0.0f);

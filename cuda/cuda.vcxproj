@@ -195,6 +195,7 @@
     <ClInclude Include="IdFunctor.h" />
     <ClInclude Include="ITimer.h" />
     <ClInclude Include="Mandelbrot.h" />
+    <ClInclude Include="Mandelbrot2.h" />
     <ClInclude Include="MandelbrotBenchmark.h" />
     <ClInclude Include="MandelbrotCPU.h" />
     <ClInclude Include="Map.h" />
@@ -217,6 +218,7 @@
   </ItemGroup>
   <ItemGroup>
     <CudaCompile Include="cuda_mandelbrot.cu" />
+    <CudaCompile Include="cuda_mandelbrot2.cu" />
     <CudaCompile Include="MandelbrotBenchmark.cu" />
     <CudaCompile Include="Map.cu" />
     <CudaCompile Include="MapBenchmark.cu" />
