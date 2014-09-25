@@ -4,6 +4,7 @@
  * See the LICENSE file in the root directory.
  */
 
+#include <algorithm>				// CUDA 6.5 requires this for std::min
 #include <thrust/device_vector.h>
 #include <thrust/sequence.h>
 #include <thrust/transform.h>

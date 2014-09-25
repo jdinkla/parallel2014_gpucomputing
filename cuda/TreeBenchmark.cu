@@ -4,6 +4,7 @@
 * See the LICENSE file in the root directory.
 */
 
+#include <algorithm>				// CUDA 6.5 requires this for std::min
 #include "Defs.h"
 #include "TreeBenchmark.h"
 #ifndef MAC
